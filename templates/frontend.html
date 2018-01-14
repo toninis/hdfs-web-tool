@@ -1,0 +1,14 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<form action="/result" method="POST">
+  Project : <select name="project">
+    {% for key , value in wr_projects.items() %}
+ <option value="{{ value }}">{{ key }}</option>
+ {% endfor %}
+</select><br>
+ Msisdn :
+ <input type="text" name="msisdn"><br>
+ <input type="submit" value="Search">
+</form>
+{%endblock%}

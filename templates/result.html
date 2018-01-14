@@ -1,0 +1,20 @@
+{%extends "layout.html"%}
+{%block content%}
+
+<div class="results">
+  {% for item in result %}
+    <div class="data">{{ item.data }}<a class="{{ item.id }}"><img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons-256/3d-transparent-glass-icons-arrows/006768-3d-transparent-glass-icon-arrows-arrows-up-down1.png" height="20" alt="30"></a></div>
+    <div class="{{ item.id }}" style="display:none">{{ item.args }}</div>
+	  </br>
+  {% endfor %}
+</div>
+
+<script>
+$( "a" ).click(function() {
+  var myClass = $(this).attr("class");
+  console.log(myClass)
+  $("div."+myClass).toggle("slow");
+});
+</script>
+
+{%endblock%}

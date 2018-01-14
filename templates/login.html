@@ -1,0 +1,11 @@
+{%extends "layout.html"%}
+{%block content%}
+<div class="login">
+<form action="/login" method="POST">
+ LDAP Credentials : <br>
+ <input type="text" name="username"><br>
+ <input type="password" name="password"><br>
+ <input type="submit" value="Login">
+</form>
+</div>
+{%endblock%}

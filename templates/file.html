@@ -1,0 +1,21 @@
+{%extends "layout.html"%}
+{%block content%}
+<p> This is the report section </p>
+
+<form action="/report_excecution" method="POST" enctype = "multipart/form-data" >
+  Project : <select name="project">
+    {% for key , value in wr_projects.items() %}
+ <option value="{{ key , value  }}">{{ key }}</option>
+ {% endfor %}
+</select><br>
+ File with msisdns :
+  <input type = "file" name = "file" /> <br>
+  From Date : {{ form.fdt(class='datepicker') }}
+  {{ form.hidden_tag() }}
+  <br>
+  To Date : {{ form.tdt(class='datepicker') }}
+  <br>
+ <input type="submit" value="Create Report">
+</form>
+
+{%endblock%}
